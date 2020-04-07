@@ -10,9 +10,7 @@ class ProductProduct(models.Model):
     @api.multi
     def _is_service_buy_make_to_order(self):
         for product in self:
-            if (product.type == 'service' and len(product.route_ids) == 2 and
-                self.env.ref('stock.route_warehouse0_mto').id in
-                product.route_ids.ids and
+            if (product.type == 'service' and
                 self.env.ref('purchase.route_warehouse0_buy').id in
                     product.route_ids.ids):
                 return True

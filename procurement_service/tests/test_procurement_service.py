@@ -19,8 +19,7 @@ class TestProcurementService(common.TransactionCase):
             'list_price': 30.75,
             'type': 'service',
             'route_ids': [(6, 0,
-                           [self.env.ref('stock.route_warehouse0_mto').id,
-                            self.env.ref('purchase.route_warehouse0_buy').id
+                           [self.env.ref('purchase.route_warehouse0_buy').id
                             ])]}
         seller_vals = {'name': self.env.ref('base.res_partner_2').id}
         product_vals['seller_ids'] = [(0, 0, seller_vals)]
